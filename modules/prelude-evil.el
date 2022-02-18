@@ -34,7 +34,21 @@
 ;;; evil-visualstar enables searching visual selection with *
 ;;; evil-numbers enables vim style numeric incrementing and decrementing
 
-(prelude-require-packages '(evil goto-chg evil-surround evil-visualstar evil-numbers))
+(prelude-require-packages '(
+                            evil
+                            goto-chg
+                            evil-surround
+                            evil-visualstar
+                            evil-numbers
+                            evil-collection))
+
+
+;; avoid on warning for evil-collection before load evil
+(setq evil-want-integration t)
+(setq evil-want-keybinding nil)
+
+(setq evil-want-C-u-scroll t)
+(setq evil-want-C-i-jump nil)
 
 (require 'evil-visualstar)
 
@@ -49,8 +63,13 @@
 ;; prevent esc-key from translating to meta-key in terminal mode
 (setq evil-esc-delay 0)
 
+;; instantiate all packages after installed
 (evil-mode 1)
 (global-evil-surround-mode 1)
+
+(when (require 'evil-collection nil t)
+  (evil-collection-init))
+
 
 (define-key evil-normal-state-map (kbd "C-A")
   'evil-numbers/inc-at-pt)
