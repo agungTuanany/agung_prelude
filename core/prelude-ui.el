@@ -58,6 +58,7 @@
 (line-number-mode t)
 (column-number-mode t)
 (size-indication-mode t)
+(setq display-line-numbers-type 'relative)
 
 ;; show line numbers at the beginning of each line
 (unless prelude-minimalistic-ui
