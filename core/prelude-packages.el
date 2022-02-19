@@ -56,29 +56,30 @@
 (defvar prelude-packages
   '(ace-window
     ag
-    avy
     anzu
+    avy
     browse-kill-ring
     crux
-    discover-my-major
     diff-hl
     diminish
+    discover-my-major
     easy-kill
     editorconfig
     epl
     expand-region
     flycheck
     gist
-    git-timemachine
     git-modes
+    git-timemachine
     guru-mode
     hl-todo
     imenu-anywhere
-    projectile
     magit
     move-text
     nlinum
     operate-on-number
+    pdf-tools
+    projectile
     smartparens
     smartrep
     super-save
