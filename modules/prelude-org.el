@@ -49,13 +49,27 @@
     (define-key newmap (kbd "C-c -") nil)
     (define-key newmap (kbd "C-a") 'org-beginning-of-line)
     (make-local-variable 'minor-mode-overriding-map-alist)
-    (push `(prelude-mode . ,newmap) minor-mode-overriding-map-alist))
-)
+    (push `(prelude-mode . ,newmap) minor-mode-overriding-map-alist)))
 
 (setq prelude-org-mode-hook 'prelude-org-mode-defaults)
 
 (add-hook 'org-mode-hook (lambda () (run-hooks 'prelude-org-mode-hook)))
 
 (provide 'prelude-org)
+
+;;; Setup a plain LaTex class for yourself
+;;; https://www.youtube.com/watch?v=0qHloGTT8XE
+(with-eval-after-load 'ox-latex
+  (add-to-list 'org-latex-classes
+               '("org-plain-latex"
+                 "\\documentclass{article}
+              [NO-DEFAULT-PACKAGES]
+              [PACKAGES]
+              [EXTRA]"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubscetion{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph(%s)" . "\\subparagraph*{%s}"))))
 
 ;;; prelude-org.el ends here
