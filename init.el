@@ -150,7 +150,7 @@ by Prelude.")
                prelude-modules-file
                (directory-files prelude-personal-dir 't "^[^#\.].*\\.el$"))))
 
-(message "[Prelude] Prelude is ready to do thy bidding, Master %s!" prelude-user)
+(message "[Prelude] Prelude is ready to do the bidding, Master %s!" prelude-user)
 
 ;; Patch security vulnerability in Emacs versions older than 25.3
 (when (version< emacs-version "25.3")
