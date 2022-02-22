@@ -95,6 +95,7 @@
 (require 'prelude-web) ;; Emacs mode for web templates
 (require 'prelude-xml)
 (require 'prelude-yaml)
+(require 'prelude-pdf)
 
 ;;; Misc
 (require 'prelude-erc) ;; A popular Emacs IRC client (useful if you're still into Freenode)

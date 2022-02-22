@@ -80,6 +80,7 @@
     operate-on-number
     pdf-tools
     projectile
+    saveplace-pdf-view
     smartparens
     smartrep
     super-save
