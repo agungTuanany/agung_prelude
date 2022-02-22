@@ -57,19 +57,4 @@
 
 (provide 'prelude-org)
 
-;;; Setup a plain LaTex class for yourself
-;;; https://www.youtube.com/watch?v=0qHloGTT8XE
-(with-eval-after-load 'ox-latex
-  (add-to-list 'org-latex-classes
-               '("org-plain-latex"
-                 "\\documentclass{article}
-              [NO-DEFAULT-PACKAGES]
-              [PACKAGES]
-              [EXTRA]"
-                 ("\\section{%s}" . "\\section*{%s}")
-                 ("\\subsection{%s}" . "\\subsection*{%s}")
-                 ("\\subsubscetion{%s}" . "\\subsubsection*{%s}")
-                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                 ("\\subparagraph(%s)" . "\\subparagraph*{%s}"))))
-
 ;;; prelude-org.el ends here
