@@ -70,7 +70,6 @@
 (when (require 'evil-collection nil t)
   (evil-collection-init))
 
-
 (define-key evil-normal-state-map (kbd "C-A")
   'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-S-A")
@@ -165,5 +164,12 @@
     "<" 'org-metaleft ; out-dent
     ">" 'org-metaright ; indent
     ))
+
 (prelude-evil-key-bindings-for-org)
+
+;; fix redo
+(evil-set-undo-system 'undo-tree)
+
 (provide 'prelude-evil)
+
+ ;;; prelude-evil.el ends here
